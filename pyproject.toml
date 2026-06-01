@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "document-parser"
+version = "0.1.0"
+description = "A tool for converting engineering documentation into a structures JSON format for automated analysis"
+authors = [
+    {name = "Elena Shangina", email = "arlantamom1999@gmail.com"},
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=3.0.0",
+    "openpyxl>=3.1.0",
+    "xlrd>=2.0.0",
+    "numpy>=2.0.0",
+    "opencv-python>=4.8.0",
+    "Pillow>=12.0.0",
+    "pytesseract>=0.3.13",
+    "python-docx>=1.2.0",
+    "lxml>=6.0.0",
+    "typing_extensions>=4.15.0",
+    "pywin32>=311; platform_system == 'Windows'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.0",
+    "Pygments>=2.20.0",
+]
+
+[project.urls]
+Repository = "https://github.com/Gouzhurou/document-parser"
+Issues = "https://github.com/Gouzhurou/document-parser/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-dir]
+"document_parser" = "document_parser"
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
